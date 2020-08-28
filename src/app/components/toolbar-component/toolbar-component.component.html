@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Demo App</span>
+    <span class="example-spacer"></span>
+    <input style="display: none" type="file" accept=".json" (change)="onFileChanged($event)" #fileInput>
+    <button mat-raised-button color="accent" (click)="fileInput.click()">UPLOAD</button>
+  </mat-toolbar-row>
+</mat-toolbar>

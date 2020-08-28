@@ -1,0 +1,45 @@
+<ng-container *ngFor="let item of doorList">
+  <mat-card class="door-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{item.Name}}</mat-card-title>
+      <mat-card-subtitle>Room - {{item.Room}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem"><b>Building</b> - {{item.Building}}</mat-list-item>
+        <mat-list-item role="listitem"><b>Floor</b> - {{item.Floor}}</mat-list-item>
+        <mat-list-item role="listitem"><b>Width</b> - {{item.Width}}</mat-list-item>
+        <mat-tab-group mat-align-tabs="start">
+          <mat-tab label="Lock" *ngIf="item.Lock">
+            <mat-list-item role="listitem" *ngIf="item.Lock.Type"><b>Type</b> - {{item.Lock.Type}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="item.Lock.Type"><b>Quantity</b> - {{item.Lock.Qty}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="item.Lock.Type"><b>Material</b> - {{item.Lock.Material}}
+            </mat-list-item>
+          </mat-tab>
+          <mat-tab label="Cylinder" *ngIf="item.Cylinder">
+            <mat-list-item role="listitem" *ngIf="item.Cylinder.Type"><b>Type</b> - {{item.Cylinder.Type}}
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngIf="item.Cylinder.Type"><b>Quantity</b> - {{item.Cylinder.Qty}}
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngIf="item.Cylinder.Type"><b>Material</b> - {{item.Cylinder.Material}}
+            </mat-list-item>
+          </mat-tab>
+          <mat-tab label="Frame" *ngIf="item.Frame">
+            <mat-list-item role="listitem" *ngIf="item.Frame.Type"><b>Type</b> - {{item.Frame.Type}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="item.Frame.Qty"><b>Quantity</b> - {{item.Frame.Qty}}</mat-list-item>
+            <mat-list-item role="listitem" *ngIf="item.Frame.Material"><b>Material</b> - {{item.Frame.Material}}
+            </mat-list-item>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-checkbox class="example-margin primary" [(ngModel)]="item.done" (change)=updateDoorDetails(item)>Done
+      </mat-checkbox>
+    </mat-card-actions>
+  </mat-card>
+
+</ng-container>
+
+<mat-card class="no-data" *ngIf="doorList.length === 0"><span>Please upload the json data</span></mat-card>

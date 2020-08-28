@@ -1,0 +1,13 @@
+app-main-page-component {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 450px);
+}
+
+:host {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
+body {
+  background-color: #b9b9b985;
+}
