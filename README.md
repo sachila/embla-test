@@ -9,5 +9,6 @@ But the repository source contains the correct order.
 
 ## Development server
 
+Please do a `npm install` once you have clone the repository and then
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
