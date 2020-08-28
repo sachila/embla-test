@@ -23,4 +23,11 @@ export class MainPageComponentComponent implements OnInit {
     public updateDoorDetails(item: DoorModel): void {
         this.doorDetailsService.updateDoorDetails(item)
     }
+
+    public enableDone(item: DoorModel): boolean {
+        if (!item.Lock) return false;
+        if (!item.Cylinder) return false;
+        if (!item.Frame) return false;
+        return true;
+    }
 }

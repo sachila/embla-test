@@ -35,7 +35,8 @@
       </mat-list>
     </mat-card-content>
     <mat-card-actions>
-      <mat-checkbox class="example-margin primary" [(ngModel)]="item.done" (change)=updateDoorDetails(item)>Done
+      <mat-checkbox *ngIf="enableDone(item)" class="example-margin primary" [(ngModel)]="item.done"
+        (change)=updateDoorDetails(item)>Done
       </mat-checkbox>
     </mat-card-actions>
   </mat-card>
